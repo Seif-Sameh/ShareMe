@@ -24,11 +24,11 @@ function App() {
     client.fetch(query)
     .then((res) => {
       setUser(res[0])
-  
-    if(!user) navigate('/login')
-  
     }) 
+    
   }, [])
+  
+  if(!user) navigate('/login')
 
   return (
     <>
