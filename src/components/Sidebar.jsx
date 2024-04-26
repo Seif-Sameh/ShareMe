@@ -12,7 +12,7 @@ const Sidebar = ({user, closeSidebar}) => {
     const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize'
 
   return (
-    <div className='flex flex-col py-4 gap-6 w-full h-screen overflow-y-scroll hide-scrollbar'>
+    <div className='fixed flex flex-col py-4 gap-6 w-full h-screen overflow-y-scroll hide-scrollbar'>
         <div className='pl-4' >
             <img src={Logo} alt="" className='w-[170px]'/>
         </div>
