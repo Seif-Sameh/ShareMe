@@ -15,7 +15,7 @@ const Pin = ({ data: { destination, postedBy, _id, image, save } }) => {
     const [savingPost, setSavingPost] = useState(false)
     const navigate = useNavigate()
 
-    const alreadySaved = !!(save?.filter((item) => item.postedBy._id == userInfo?.jti)?.length)
+    const alreadySaved = !!(save?.filter((item) => item.postedBy._id == userInfo?.sub)?.length)
 
     const savePin = (id) => {
         if (!alreadySaved) {
@@ -26,10 +26,10 @@ const Pin = ({ data: { destination, postedBy, _id, image, save } }) => {
                 .setIfMissing({ save: [] })
                 .insert('after', 'save[-1]', [{
                     _key: uuidv4(),
-                    userId: userInfo.jti,
+                    userId: userInfo.sub,
                     postedBy: {
                         _type: 'postedBy',
-                        _ref: userInfo.jti
+                        _ref: userInfo.sub
                     }
                 }])
                 .commit()
@@ -103,7 +103,7 @@ const Pin = ({ data: { destination, postedBy, _id, image, save } }) => {
                                 </a>
                             )}
                             {
-                                postedBy?._id == userInfo?.jti && (
+                                postedBy?._id == userInfo?.sub && (
                                     <button
                                         type='button'
                                         onClick={(e) => {

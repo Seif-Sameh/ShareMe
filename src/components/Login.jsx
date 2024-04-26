@@ -11,11 +11,11 @@ const Login = () => {
 
     const onSuccess = (response) => {
         const data = jwtDecode(response.credential)
-        const {name, picture,  jti} = data
+        const {name, picture,  sub} = data
         localStorage.setItem('user', JSON.stringify(data))
         
         const doc = {
-            _id: jti,
+            _id: sub,
             _type: 'user',
             userName: name,
             image: picture,

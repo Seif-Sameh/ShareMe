@@ -20,7 +20,7 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const query = userQuery(userInfo?.jti)
+    const query = userQuery(userInfo?.sub)
     client.fetch(query)
     .then((res) => {
       setUser(res[0])
