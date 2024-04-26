@@ -56,7 +56,7 @@ const UserProfile = () => {
   return (
     <>
       {!user && <Spinner message={'Loading profile...'} />}
-      <div className='relative pb-2 h-full flex justify-center items-center'>
+      <div className='relative pb-2 flex justify-center items-center'>
         <div className='flex flex-col pb-5'>
           <div className='relative flex flex-col mb-7'>
             <div className='flex flex-col justify-center items-center'>

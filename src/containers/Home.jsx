@@ -13,7 +13,7 @@ const Home = ({user, searchTerm, setSearchTerm}) => {
   
   return (
     <div className='flex md:flex-row flex-col h-full'>
-      <div className='hidden md:flex w-[300px]'>
+      <div className='hidden md:flex h-screen flex-initial'>
         <Sidebar/>
       </div>
       <div className='flex md:hidden w-full p-3 justify-between items-center'>
@@ -38,7 +38,7 @@ const Home = ({user, searchTerm, setSearchTerm}) => {
           </div>
         )
       }
-      <div className='w-full h-full bg-gray-200 p-3 min-h-screen'>
+      <div className='w-full bg-gray-200 p-3 h-screen overflow-y-scroll'>
         <Navbar user={user} search={searchTerm} setSearch={setSearchTerm}/>
         <Outlet/>
       </div>

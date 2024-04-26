@@ -34,6 +34,7 @@ const Feed = () => {
     <div className='p-5'>
       {loading && <Spinner message={'We are adding new ideas to your feed!'}/>}
       {pins && <MasonryLayout pins={pins}/>}
+      {pins?.length == 0 && <div className='flex flex-col w-full h-full items-center justify-center text-center text-xl text-gray-600 font-bold'> <p>No Pins found here </p> <p>You can add some!</p></div>}
     </div>
   )
 }

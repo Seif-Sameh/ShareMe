@@ -5,8 +5,8 @@ const Navbar = ({user, search, setSearch}) => {
   const Navigate = useNavigate()
   
   return (
-    <div className='flex gap-2 items-center mb-10'>
-      <div className='flex items-center w-full'>
+    <div className='flex gap-2 items-center mb-5'>
+      <div className='flex items-center w-full relative'>
       <IoMdSearch size={24} className='ml-2 absolute text-gray-400'/>
       <input 
       type="text" 
