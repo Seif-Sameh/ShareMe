@@ -28,7 +28,6 @@ function App() {
     
   }, [])
   
-  if(!user) navigate('/login')
 
   return (
     <>
