@@ -27,7 +27,11 @@ function App() {
     }) 
     
   }, [])
-  
+  useEffect(() => {
+    if(user == null && userInfo == null){
+      navigate('login')
+    }
+  }, [user])
 
   return (
     <>
